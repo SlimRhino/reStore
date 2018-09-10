@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Razor;
+using restore.Configure;
 
 namespace restore
 {
@@ -23,6 +25,11 @@ namespace restore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.Configure<RazorViewEngineOptions>(options =>
+           {
+               options.ViewLocationExpanders.Add(new RootLocationExpander());
+           });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
