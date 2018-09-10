@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "devDependencies": {
     "aspnet-webpack": "^2.0.1",
+    "buefy": "^0.6.6",
     "css-loader": "^0.25.0",
     "event-source-polyfill": "^0.0.7",
     "extract-text-webpack-plugin": "^2.0.0-rc",
