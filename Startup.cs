@@ -2,13 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Razor;
 using restore.Configure;
+using restore.Data;
+using restore.Data.Entities;
 
 namespace restore
 {
@@ -30,6 +34,17 @@ namespace restore
            {
                options.ViewLocationExpanders.Add(new RootLocationExpander());
            });
+
+            services.AddDbContext<ApplicationContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("SQLServerDefConn"));
+            });
+
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<ApplicationContext>()
+                .AddDefaultTokenProviders();
+
+            DbContextExtensions.UserManager = services.BuildServiceProvider().GetService<UserManager<AppUser>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
