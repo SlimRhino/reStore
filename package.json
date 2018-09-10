@@ -18,5 +18,24 @@
     "vue-template-compiler": "^2.2.2",
     "webpack": "^2.2.0",
     "webpack-hot-middleware": "^2.12.2"
-  }
+  },
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/rhinoseros/restore.git"
+  },
+  "keywords": [
+    "restore"
+  ],
+  "author": "rhinoseros",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/rhinoseros/restore/issues"
+  },
+  "homepage": "https://gitlab.com/rhinoseros/restore#README",
+  "description": ""
 }
