@@ -25,6 +25,7 @@ namespace restore.Data
                     LockoutEnabled = false
                 };
                 UserManager.CreateAsync(user, "c29_cwNK").GetAwaiter().GetResult();
+                AddProducts(context);
             }
         }
 
