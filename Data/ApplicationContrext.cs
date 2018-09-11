@@ -20,7 +20,7 @@ namespace restore.Data
             base.OnModelCreating(builder);
 
             builder.Entity<Product>()
-                .HasIndex()
+                .HasIndex(p =>p.Slug)
                 .IsUnique();
         }
     }
