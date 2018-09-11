@@ -8,7 +8,6 @@
                 <p @click="select(product)">Объем: {{ product.volume }} мл</p>
                 <p @click="select(product)">Цена: {{ product.price }} рублей</p>
             </div>
-            <product-details class="details" v-if="selectedProduct" :product="selectedProduct" />
         </div>
     </div>
 </template>
