@@ -27,5 +27,36 @@ namespace restore.Data
                 UserManager.CreateAsync(user, "c29_cwNK").GetAwaiter().GetResult();
             }
         }
+
+        private static void AddProducts(ApplicationContext context)
+        {
+            if (context.Products.Any() == false)
+            {
+                var products = new List<Product>()
+                {
+                    new Product
+                    {
+                        Name = "Латте",
+                        Slug = "latte",
+                        Description = "Кофе латте схож по названию с напитком латте макиато. Основное отличие латте макиато заключается в том, что при его приготовлении кофе добавляется в молоко (а не молоко в кофе, как в латте) и напиток, таким образом, получается слоистым: слой молока, слой эспрессо, слой вспененного молока. Латте даёт более сильный вкус кофе",
+                        Thumbnail = "https://via.placeholder.com/100x150",
+                        Volume = 385,
+                        Price = 95,
+                    },
+                    new Product
+                    {
+                        Name = "Эспрессо",
+                        Slug = "espresso",
+                        Description = "Эсперссо - метод приготовления кофе путём прохождения горячей воды (около 90 °C) под давлением 9 бар через фильтр с молотым кофе.",
+                        Thumbnail = "https://via.placeholder.com/100x150",
+                        Volume = 35,
+                        Price = 60,
+                    }
+                };
+
+                context.Products.AddRange(products);
+                context.SaveChanges();
+            }
+        }
     }
 }
