@@ -16,27 +16,11 @@
 <script>
     export default {
         name: "product-list",
-        data() {
-            return {
-                products: [{
-                    name: "Латте",
-                    slug: "latte",
-                    description: "Кофе латте схож по названию с напитком латте макиато. Основное отличие латте макиато заключается в том, что при его приготовлении кофе добавляется в молоко (а не молоко в кофе, как в латте) и напиток, таким образом, получается слоистым: слой молока, слой эспрессо, слой вспененного молока. Латте даёт более сильный вкус кофе",
-                    thumbnail: "https://via.placeholder.com/100x150",
-                    volume: 385,
-                    price: 95,
-                },
-                {
-                    name: "Эспрессо",
-                    slug: "espresso",
-                    description: "Эсперссо - метод приготовления кофе путём прохождения горячей воды (около 90 °C) под давлением 9 бар через фильтр с молотым кофе.",
-                    thumbnail: "https://via.placeholder.com/100x150",
-                    volume: 35,
-                    price: 60,
-                },
-                ],
-                selectedProduct:  null
-            };
+        props: {
+            products: {
+                type: Array,
+                required: true
+            }
         },
         methods: {
             select(product) {
