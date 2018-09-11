@@ -1,7 +1,14 @@
 ﻿import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+import Store from './pages/Store.vue';
+import Product from './pages/Product.vue';
+
 Vue.use(VueRouter);
 const routes = [
+    { path: "/products", component: Store },
+    { path: "/products/:slug", component: Product },
+    { path: "*", redirect: "/products"}
 ];
 new Vue({
     el: '#app-root',
