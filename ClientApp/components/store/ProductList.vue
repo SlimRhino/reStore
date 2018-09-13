@@ -1,7 +1,7 @@
 ﻿<template>
     <div class="products">
         <b-container>
-<h1 class="mt-4 mb-4">Кофе</h1>
+<h1 class="mt-4 mb-4">Мобилки</h1>
     <b-row>
         <b-col class="mb-4" sm="6" v-for="product in products"
         :key="product.id">
