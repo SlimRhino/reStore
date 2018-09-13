@@ -14,10 +14,24 @@ namespace restore.Data.Entities
         [Required]
         public string Thumbnail { get; set; }
         [Required]
+        public string ShortDescription { get; set; }
+        [Required]
         public string Description { get; set; }
         [Required]
-        public int Price { get; set; }
+        public decimal ScreenSize { get; set; }
         [Required]
-        public int Volume { get; set; }
+        public decimal TalkTime { get; set; }
+        [Required]
+        public decimal StandbyTime { get; set; }
+        [Required]
+        public int BrandID { get; set; }
+        [Required]
+        public int OSId { get; set; }
+
+        public List<Image> Images { get; set; }
+        public Brand Brand { get; set; }
+        public OS OS { get; set; }
+        public List<ProductFeature> ProductFeatures { get; set; } = new List<ProductFeature>();
+        public List<ProductVariant> ProductVariants { get; set; } = new List<ProductVariant>();
     }
 }

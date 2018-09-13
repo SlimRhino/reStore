@@ -20,7 +20,8 @@ namespace restore.Root.Products
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(string brands, int? minPrice, int? maxPrice, 
+            int? minScreen, int? maxScreen, string capacity, string colours, string os, string features)
         {
             return Ok(await _db.Products.ToListAsync());
         }

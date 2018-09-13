@@ -15,7 +15,7 @@ module.exports = (env) => {
                 'isomorphic-fetch',
                 'vue',
                 'vue-router',
-				'bootstrap/dist/css/bootstrap.min.css',
+				/* 'bootstrap/dist/css/bootstrap.min.css', */
 				'bootstrap-vue/dist/bootstrap-vue.css',
 				'bootstrap-vue',
 				'nprogress/nprogress.css'
@@ -24,7 +24,21 @@ module.exports = (env) => {
         module: {
             rules: [
                 { test: /\.css(\?|$)/, use: extractCSS.extract({ use: isDevBuild ? 'css-loader' : 'css-loader?minimize' }) },
-                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' }
+                { test: /\.(png|woff|woff2|eot|ttf|svg)(\?|$)/, use: 'url-loader?limit=100000' },
+				 {
+                    test: /\.scss$/,    
+                    use: [
+                        {
+                            loader: 'style-loader'
+                        },
+                        {
+                            loader: 'css-loader'
+                        },
+                        {
+                            loader: 'sass-loader'
+                        }
+                    ]
+                }
             ]
         },
         output: { 
