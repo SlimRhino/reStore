@@ -51,7 +51,8 @@ namespace restore.Root.Products
                     Name = x.Name,
                     ShortDescription = x.ShortDescription,
                     Thumbnail = x.Thumbnail,
-                    Slug = x.Slug
+                    Slug = x.Slug,
+                    Price = x.ProductVariants.Select(p => p.Price).First()
                 })
                 .ToListAsync());
         }

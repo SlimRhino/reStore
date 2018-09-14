@@ -1,11 +1,24 @@
 <template>
-    <div class="details">
-        <h1>{{ product.name }}</h1>
-        <img :src="product.thumbnail" :alt="product.name" />
-        <p>{{ product.description }}</p>
-        <p>Объем: {{ product.volume }} мл</p>
-        <p>Цена: {{ product.price }}  &#8381;</p>
-    </div>
+   <b-container class="pt-4">
+    <b-media>
+      <img slot="aside" :src="product.thumbnail" :alt="product.name" />
+
+      <h2>{{ product.name }}</h2>
+
+      <p class="mt-4 mb-4">
+        {{ product.shortDescription }}
+      </p>
+
+      <p class="mt-4 mb-4">{{ product.price }} gg</p>
+
+      <b-button variant="primary">Add to cart</b-button>
+    </b-media>
+
+    <h3 class="mt-4">Product details</h3>
+    <p class="mt-4 mb-4">
+      {{ product.description }}
+    </p>
+  </b-container>
 </template>
 
 <script>

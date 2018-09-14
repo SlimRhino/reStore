@@ -1,8 +1,6 @@
 ﻿<template>
     <div class="products">
-        <b-container>
-<h1 class="mt-4 mb-4">Мобилки</h1>
-    <b-row>
+    <b-row class="mt-4">
         <b-col class="mb-4" sm="6" v-for="product in products"
         :key="product.id">
             <b-media class="product">
@@ -13,12 +11,11 @@
             <p class="mt-4 mb-4">
             {{ product.shortDescription }}
             </p>
-            <p class="mt-4 mb-4">{{ product.price }}</p>
-            <b-button variant="primary">Add to cart</b-button>
+            <p class="mt-4 mb-4">Цена в евро {{ product.price }}</p>
+            <b-button variant="primary">В корзину</b-button>
             </b-media>
         </b-col>
-    </b-row>
-</b-container>
+    </b-row>>
     </div>
 </template>
 

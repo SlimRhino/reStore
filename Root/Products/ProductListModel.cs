@@ -12,5 +12,6 @@ namespace restore.Root.Products
         public string Name { get; set; }
         public string ShortDescription { get; set; }
         public string Thumbnail { get; set; }
+        public decimal Price { get; set; }
     }
 }
